@@ -4,6 +4,19 @@ An extremely simple set of SASS components to help build out the basic layout
 of a given site. Ignores style as much as possible, focusing on layout, and 
 built for responsive design.
 
+---
+
+  - [Installation](#installation)
+    - [Getting the SASS Files](#getting-the-sass-files)
+    - [(Optional) Update SASS includePaths for Easy Imports](#optional-update-sass-includepaths-for-easy-imports)
+  - [Usage](#usage)
+  - [Components](#components)
+    - [Container](#container)
+    - [Split](#split)
+    - [Uneven Split](#uneven-split)
+    - [Split List](#split-list)
+    - [Icon Unordered List](#icon-unordered-list)
+
 ## Installation
 
 ### Getting the SASS Files
