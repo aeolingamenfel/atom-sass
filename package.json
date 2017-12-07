@@ -1,7 +1,7 @@
 {
   "name": "atom-sass",
-  "version": "0.2.0",
-  "description": "",
+  "version": "1.0.0",
+  "description": "An extremely simple set of SASS components to help build out the basic layout of a given site. Ignores style as much as possible, focusing on layout, and  built for responsive design.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +11,21 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aeolingamenfel/atom-sass.git"
+  },
+  "keywords": [
+    "sass",
+    "components",
+    "layout",
+    "simple",
+    "css"
+  ],
+  "bugs": {
+    "url": "https://github.com/aeolingamenfel/atom-sass/issues"
+  },
+  "homepage": "https://github.com/aeolingamenfel/atom-sass#readme"
 }
