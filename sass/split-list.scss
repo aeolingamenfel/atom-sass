@@ -7,7 +7,7 @@ $atom_split_list_options: (2, 3, 4) !default;
 
     @each $option in $atom_split_list_options {
         &.split-#{$option} {
-            flex: 0 0 #{($atom_split_list_options / $atom_split_list_column_basis) * 100%};
+            flex: 0 0 #{(($atom_split_list_column_basis / $option) / $atom_split_list_column_basis) * 100%};
         }
     }
 }
