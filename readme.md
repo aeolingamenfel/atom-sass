@@ -70,7 +70,15 @@ contents of the element will max out at that width, and margin will be evenly
 applied to the left and right sides to center the content.
 
 In addition, a gutter (applied via padding) is added to the left and right side
-for mobile devices, and screens smaller than `$atom_container_max`. 
+for mobile devices, and screens smaller than `$atom_container_max`.
+
+**Example:**
+
+```HTML
+<div class="container">
+    <!-- Your content here -->
+</div>
+```
 
 #### Variables
 
