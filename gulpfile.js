@@ -6,6 +6,8 @@ const SASS_SOURCES = [
     "sass/**/*.scss"
 ];
 
+gulp.task("default", ["build-css"]);
+
 gulp.task("build-css", function() {
     return gulp.src(SASS_SOURCES)
         .pipe(sass())
