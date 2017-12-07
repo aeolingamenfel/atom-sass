@@ -12,10 +12,10 @@ built for responsive design.
   - [Usage](#usage)
   - [Components](#components)
     - [Container](#container)
-    - [Split](#split)
-    - [Uneven Split](#uneven-split)
-    - [Split List](#split-list)
     - [Icon Unordered List](#icon-unordered-list)
+    - [Split](#split)
+    - [Split List](#split-list)
+    - [Uneven Split](#uneven-split)
 
 ## Installation
 
@@ -110,6 +110,48 @@ The maximum width of the content in the container.
 The amount of padding to add to the left and right of the container as a gutter
 for mobile devices.
 
+### Icon Unordered List
+
+**Name:** `icon-ul`<br />
+**Import:** `@import "atom-sass/sass/icon-ul";`<br />
+**Classes:** `.icon-ul`
+
+Provides a way of replacing the default unorder lists' bullet icons with any 
+other icon. Just apply the `icon-ul` class to any `<ul>` element to change its
+icons.
+
+**Example:**
+
+```HTML
+<ul class="icon-ul">
+    <!-- list items here -->
+</ul>
+```
+
+#### Variables
+
+##### $atom_icon_ul_icon_font
+
+**Type:** Font Family<br />
+**Default:** `FontAwesome`
+
+The font family of the font to use to render the icon.
+
+##### $atom_icon_ul_icon
+
+**Type:** String<br />
+**Default:** `'\f00c'` (`fa-check` in FontAwesome)
+
+The string holding the character code of the character in the font to render 
+in the place of the bullet points.
+
+##### $atom_icon_ul_color
+
+**Type:** Color<br />
+**Default:** `#000`
+
+The color of the icon.
+
 ### Split
 
 **Name:** `split`<br />
@@ -135,6 +177,56 @@ horizontal space within it amoung all of its children that have the
     </div>
 </div>
 ```
+
+### Split List
+
+**Name:** `split-list`<br />
+**Import:** `@import "atom-sass/sass/split-list";`<br />
+**Classes:** `.split-list .split-item .split-*`
+
+Any element with the `split-list` class applied to it will make all elements
+with `split-item` beneath it take up an even amount of columns, and wrap down
+the page.
+
+The amount of horizontal space taken up by a given `split-item` is determined
+by the `split-*` class applied to the parent `split-list` element, where the 
+`*` represents the split number. By default, `split-2`, `split-3`, and `split-4`
+are available, but these are configurable.
+
+The split number determines how much space the items take up by computing 
+`1 / [split number]`, and multiplying that by the total amount of horizontal 
+space available.
+
+So, for example, `split-3` means that all `split-item` elements would take up 
+one third, or `33.3%` of the available horizontal space.
+
+**Example:**
+
+```HTML
+<div class="split-list split-2">
+    <div class="split-item">
+        Column 1 Row 1
+    </div>
+    <div class="split-item">
+        Column 2 Row 1
+    </div>
+    <div class="split-item">
+        Column 1 Row 2
+    </div>
+    <div class="split-item">
+        Column 2 Row 2
+    </div>
+</div>
+```
+
+#### Variables
+
+##### $atom_split_list_options
+
+**Type:** Array<Integer><br />
+**Default:** `(2, 3, 4)`
+
+List of integers representing each split number available for use.
 
 ### Uneven Split
 
@@ -225,95 +317,3 @@ be available.
 
 The rendered size of each split for these numbers is determined by the amount
 of columns.
-
-### Split List
-
-**Name:** `split-list`<br />
-**Import:** `@import "atom-sass/sass/split-list";`<br />
-**Classes:** `.split-list .split-item .split-*`
-
-Any element with the `split-list` class applied to it will make all elements
-with `split-item` beneath it take up an even amount of columns, and wrap down
-the page.
-
-The amount of horizontal space taken up by a given `split-item` is determined
-by the `split-*` class applied to the parent `split-list` element, where the 
-`*` represents the split number. By default, `split-2`, `split-3`, and `split-4`
-are available, but these are configurable.
-
-The split number determines how much space the items take up by computing 
-`1 / [split number]`, and multiplying that by the total amount of horizontal 
-space available.
-
-So, for example, `split-3` means that all `split-item` elements would take up 
-one third, or `33.3%` of the available horizontal space.
-
-**Example:**
-
-```HTML
-<div class="split-list split-2">
-    <div class="split-item">
-        Column 1 Row 1
-    </div>
-    <div class="split-item">
-        Column 2 Row 1
-    </div>
-    <div class="split-item">
-        Column 1 Row 2
-    </div>
-    <div class="split-item">
-        Column 2 Row 2
-    </div>
-</div>
-```
-
-#### Variables
-
-##### $atom_split_list_options
-
-**Type:** Array<Integer><br />
-**Default:** `(2, 3, 4)`
-
-List of integers representing each split number available for use.
-
-### Icon Unordered List
-
-**Name:** `icon-ul`<br />
-**Import:** `@import "atom-sass/sass/icon-ul";`<br />
-**Classes:** `.icon-ul`
-
-Provides a way of replacing the default unorder lists' bullet icons with any 
-other icon. Just apply the `icon-ul` class to any `<ul>` element to change its
-icons.
-
-**Example:**
-
-```HTML
-<ul class="icon-ul">
-    <!-- list items here -->
-</ul>
-```
-
-#### Variables
-
-##### $atom_icon_ul_icon_font
-
-**Type:** Font Family<br />
-**Default:** `FontAwesome`
-
-The font family of the font to use to render the icon.
-
-##### $atom_icon_ul_icon
-
-**Type:** String<br />
-**Default:** `'\f00c'` (`fa-check` in FontAwesome)
-
-The string holding the character code of the character in the font to render 
-in the place of the bullet points.
-
-##### $atom_icon_ul_color
-
-**Type:** Color<br />
-**Default:** `#000`
-
-The color of the icon.
