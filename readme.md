@@ -10,6 +10,7 @@ built for responsive design.
     - [Getting the SASS Files](#getting-the-sass-files)
     - [(Optional) Update SASS includePaths for Easy Imports](#optional-update-sass-includepaths-for-easy-imports)
   - [Usage](#usage)
+    - [Making Split Areas Stack](#making-split-areas-stack)
   - [Components](#components)
     - [Container](#container)
     - [Icon Unordered List](#icon-unordered-list)
@@ -65,6 +66,32 @@ any number of configuration variables based on the components' function. To
 include a component, simply add `@import "atom-sass/sass/[component name]"` to 
 the appropriate SASS file. See the [Components](#components) section for a list 
 of components, their names, and any configuration variables they have.
+
+### Making Split Areas Stack
+
+You may want to make splits stack at some breakpoint, or some arbitrary change
+in your site. Instead of providing classes to do that (as your mileage may 
+vary, especially per split element), I've elected to put in no mechanism for 
+quickly making things stack at a certain breakpoint.
+
+Instead, if you wish to do this, please do the following:
+
+All split components use flexbox to size and position themselves. Therefore,
+the quickest way to just make a split stack is to apply `display: block` to 
+any split element at whatever breakpoint you want. IE:
+
+```CSS
+@media (max-width: 768px) {
+    .split {
+        display: block;
+    }
+}
+```
+
+I realize that some may want some sort of automatic class, like
+`split-stack-mobile` or similar, and I'll look in to a more general purpose
+solution. If you have any ideas or requests, feel free to 
+[open an issue](https://github.com/aeolingamenfel/atom-sass/issues).
 
 ## Components
 
